@@ -9,6 +9,7 @@
 * Возведение в степень ^
 
 Проект написан на языке C++ с использованием Qt 5.
+Скомпилирован в Visual Studio 2013. Platform Toolset v110 (Visual Studio 2012). Qt5.1.1.
 
 ![Main Screen](/img/main.PNG)
 ![Validation Error](/img/validation-error.PNG)
