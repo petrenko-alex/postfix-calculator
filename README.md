@@ -9,3 +9,6 @@
 * Возведение в степень ^
 
 Проект написан на языке C++ с использованием Qt 5.
+
+![Main Screen](/img/main.PNG)
+![Validation Error](/img/validation-error.PNG)
