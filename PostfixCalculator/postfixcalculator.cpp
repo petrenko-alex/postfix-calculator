@@ -254,3 +254,60 @@ void PostfixCalculator::clearResult()
 {
 	ui.result->clear();
 }
+
+double PostfixCalculator::GetTime()
+{
+	LARGE_INTEGER lpFrequency, lpPerfomanceCount;
+	QueryPerformanceFrequency(&lpFrequency);
+	QueryPerformanceCounter(&lpPerfomanceCount);
+	return LiToDouble(lpPerfomanceCount) / LiToDouble(lpFrequency);
+}
+
+double PostfixCalculator::LiToDouble(LARGE_INTEGER x)
+{
+	double result =
+		((double)x.HighPart) * 4.294967296E9 + (double)((x).LowPart);
+	return result;
+}
+
+void PostfixCalculator::timeMeasure()
+{
+	MyStack stack;
+	double start, end, duration;
+	double push = 0;
+	double pop = 0;
+	double peek = 0;
+
+	/* Замер времени добавления элемента */
+	start = GetTime();
+	for (int i = 0; i < 10000; ++i)
+	{
+		stack.push(1);
+	}
+	end = GetTime();
+	duration = end - start;
+	push = duration / 10000;
+	
+	/* Замер времени вызова вершины стека */
+	start = GetTime();
+	for (int i = 0; i < 10000; ++i)
+	{
+		stack.peek();
+	}
+	end = GetTime();
+	duration = end - start;
+	peek = duration / 10000;
+
+	/* Замер времени удаления элемента с вершины */
+	start = GetTime();
+	for (int i = 0; i < 10000; ++i)
+	{
+		stack.pop();
+	}
+	end = GetTime();
+	duration = end - start;
+	pop = duration / 10000;
+	
+
+	
+}

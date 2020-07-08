@@ -14,6 +14,8 @@ MyStack::~MyStack()
 	{
 		pop();
 	}
+	delete head;
+	head = 0;
 }
 
 void MyStack::push(double value)

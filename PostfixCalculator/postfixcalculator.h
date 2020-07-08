@@ -5,6 +5,8 @@
 #include <QMessageBox>
 #include "ui_postfixcalculator.h"
 #include "MyStack.h"
+#include <time.h>
+#include <windows.h>
 #include "inputstringvalidator.h"
 
 class PostfixCalculator : public QMainWindow
@@ -34,6 +36,12 @@ private:
 	bool isOperation(const QString &operation);
 	/* Очистка поля результата */
 	void clearResult();
+	/* Время в секундах */
+	double GetTime();
+	/* LongInt в double */
+	double LiToDouble(LARGE_INTEGER x);
+	/* Замер времени стека */
+	void timeMeasure();
 
 	Ui::PostfixCalculatorClass ui;
 	QStringList input;
